@@ -1,3 +1,7 @@
 default
 fachwerk
 bakedclay?
+minetest_errata?
+moreblocks?
+cottages?
+swamp?
