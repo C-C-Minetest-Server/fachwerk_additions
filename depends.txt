@@ -1,4 +1,3 @@
-default
 fachwerk
 bakedclay?
 minetest_errata?
