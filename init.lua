@@ -10,30 +10,6 @@
 -- Licence: AGPL
 --
 
-local vc_version = "$Id: init.lua,v 1.8 2024/03/05 02:55:10 minetest Exp $"
-
-local vc_v = vc_version:split(" ",false,5,false)
-
-
-fachwerk_additions = {}
-fachwerk_additions.version = vc_v[3]
-fachwerk_additions.date = vc_v[4]:gsub("/","-",2)
-
-local mod_name = "fachwerk_additions" 
-local full_version = mod_name .. " version "..fachwerk_additions.version.." from "..fachwerk_additions.date
--- minetest.display_chat_message(full_version)
-minetest.chat_send_all(full_version)
-
--- local mod_storage = minetest.get_mod_storage()
-
-
-local LOG_LEVEL = 'action'
-
-local function log(level, message)
-   minetest.log(level, ('[%s] %s'):format(mod_name, message))
-end
-
-
 local additions = {
 
    -- default
@@ -109,8 +85,3 @@ for _,n in pairs(additions) do
       end
    end
 end
-
-
-log(LOG_LEVEL,"loaded")
-
-
