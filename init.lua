@@ -11,10 +11,6 @@
 --
 
 local additions = {
-
-   -- default
-   -- "default:",
-
    -- bakedclay
    "bakedclay:white",
    "bakedclay:grey",
@@ -22,17 +18,17 @@ local additions = {
    "bakedclay:red",
    "bakedclay:yellow",
    "bakedclay:green",
-   "bakedclay:cyan", 
-   "bakedclay:blue", 
+   "bakedclay:cyan",
+   "bakedclay:blue",
    "bakedclay:magenta",
-   "bakedclay:orange", 
-   "bakedclay:violet", 
-   "bakedclay:brown", 
-   "bakedclay:pink", 
+   "bakedclay:orange",
+   "bakedclay:violet",
+   "bakedclay:brown",
+   "bakedclay:pink",
    "bakedclay:dark_grey",
    "bakedclay:dark_green",
 
-   --  minetest_errata
+   -- minetest_errata
    "minetest_errata:flint_block",
    "minetest_errata:mossystone",
    "default:mossycobble",
@@ -60,28 +56,17 @@ local additions = {
    -- swamp
    "swamp:mud_block",
    "swamp:mud_brick",
-
-
-   --   "",
-
 }
 
-
---
-
--- fachwerk.register_fachwerk(basename, texture, description, craft_from)
-
-
-for _,n in pairs(additions) do
+for _, n in pairs(additions) do
    if n then
       basenode = minetest.registered_nodes[n]
       if basenode then
-	 local btex = basenode.tiles[1]
-	 local bdesc = basenode.description
-	 local bname = bdesc:lower():gsub(" ","_")
+         local btex = basenode.tiles[1]
+         local bdesc = basenode.description
+         local bname = bdesc:lower():gsub(" ", "_")
 
-	 fachwerk.register_fachwerk(":"..bname,btex,bdesc,n)
-
+         fachwerk.register_fachwerk(":" .. bname, btex, bdesc, n)
       end
    end
 end
